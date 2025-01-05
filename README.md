@@ -10,7 +10,6 @@ AshenOS is a web-based operating system designed to provide a comprehensive and 
     *   Web browsing
     *   File management
     *   Text editing
-    *   (Add more specific apps here if possible, e.g., "Code Editor", "Image Viewer")
 *   **Settings and Customization:** A dedicated settings panel allows users to personalize their AshenOS experience.
 *   **Initial Setup Screen:** A guided setup process helps new users configure their environment quickly and easily.
 *   **Web-Based:** Accessible from any device with a web browser.
@@ -27,10 +26,8 @@ AshenOS is currently in alpha. This means:
 
 Since this is an alpha release, it's primarily intended for development and testing purposes. If you want to contribute or explore the code:
 
-1.  **Clone the repository:** `git clone <repository_url>`
+1.  **Clone the repository:** `git clone https://github.com/ashenarrow/ashenOS`
 2.  **Navigate to the project directory:** `cd AshenOS`
-3.  **(If applicable) Install dependencies:** `npm install` or `yarn install` (If there's a link to a build process)
-4.  **Open the `index.html` file in your web browser.**
 
 **Note:** Detailed setup instructions for a production environment will be provided in later releases.
 
@@ -38,13 +35,12 @@ Since this is an alpha release, it's primarily intended for development and test
 
 Contributions are welcome! If you find a bug, have a feature request, or want to contribute code, please open an issue or submit a pull request on the GitHub repository.
 
-## Known Issues
-
-*(List any known bugs or limitations)*
-
 ## Roadmap (Planned Features)
 
-*(List planned features for future releases)*
+*More interactive file system*
+*User contributed store*
+*Background changing*
+*Custom coding language*
 
 ## Disclaimer
 
