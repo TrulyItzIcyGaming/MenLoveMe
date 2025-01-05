@@ -1,6 +1,7 @@
 # AshenOS - Web Operating System (Alpha v0.1.1)
 
-![AshenOS](https://i.imgur.com/NQZMFjh.png)  AshenOS is a web-based operating system designed to provide a comprehensive and versatile online environment. This project is currently in its **alpha stage (v0.1.1)**, meaning it is still under heavy development and may contain bugs and incomplete features.
+![AshenOS](https://i.imgur.com/NQZMFjh.png)  
+AshenOS is a web-based operating system designed to provide a comprehensive and versatile online environment. This project is currently in its **alpha stage (v0.1.1)**, meaning it is still under heavy development and may contain bugs and incomplete features.
 
 ## Key Features
 
