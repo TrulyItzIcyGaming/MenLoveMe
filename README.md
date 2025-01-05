@@ -37,10 +37,10 @@ Contributions are welcome! If you find a bug, have a feature request, or want to
 
 ## Roadmap (Planned Features)
 
-* More interactive file system*
-* User contributed store*
-* Background changing*
-* Custom coding language*
+* More interactive file system
+* User contributed store
+* Background changing
+* Custom coding language
 
 ## Disclaimer
 
