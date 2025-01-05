@@ -46,10 +46,6 @@ Contributions are welcome! If you find a bug, have a feature request, or want to
 
 AshenOS is provided "as is" without any warranty. Use at your own risk.
 
-## License
-
-(Specify the license under which the project is distributed, e.g., MIT, GPL, Apache 2.0)
-
 ## Contact
 
 (Optional: Provide contact information or a link to a discussion forum)
