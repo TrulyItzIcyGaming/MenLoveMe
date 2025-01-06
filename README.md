@@ -48,4 +48,4 @@ AshenOS is provided "as is" without any warranty. Use at your own risk.
 
 ## Contact
 
-(Optional: Provide contact information or a link to a discussion forum)
+jayfeatherpros@gmail.com
