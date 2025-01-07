@@ -6,11 +6,18 @@ window.addEventListener('beforeinstallprompt', (e) => {
   deferredPrompt = e;
 
   const installButton = document.getElementById('installButton');
-  if (installButton) {
-    installButton.style.display = 'block';
 
-    installButton.addEventListener('click', (e) => {
+  if (!installButton) {
+    console.error("Install button not found in HTML. Please add <button id='installButton'>Install App</button> to your HTML.");
+    return;
+  }
+
+  installButton.style.display = 'block';
+
+  installButton.addEventListener('click', () => {
+    if (deferredPrompt) {
       deferredPrompt.prompt();
+
       deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
           console.log('User accepted the A2HS prompt');
@@ -20,8 +27,12 @@ window.addEventListener('beforeinstallprompt', (e) => {
         deferredPrompt = null;
         installButton.style.display = 'none';
       });
-    });
-  } else {
-    console.log("Install button not found. Make sure it has the id 'installButton'.");
-  }
+    } else {
+      console.error("deferredPrompt is null. This should not happen if the beforeinstallprompt event fired.");
+    }
+  });
+});
+
+window.addEventListener('appinstalled', (event) => {
+  console.log('👍', 'appinstalled', event);
 });
