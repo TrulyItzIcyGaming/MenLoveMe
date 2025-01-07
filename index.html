@@ -7,6 +7,20 @@
   <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
   <link rel="manifest" href="manifest.json">
+    <script>
+    // Service worker registration code (from previous responses)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Service Worker registered:', registration);
+          })
+          .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
   <title>AshenOS</title>
   <style>
     body {
@@ -324,12 +338,8 @@
     };
     run().catch(handleError);
   </script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }
-    </script>
+ <button id="installButton" style="display:none;">Install App</button>
+
+  <script src="pwa-install.js"></script> <script src="script.js"></script>
 </body>
 </html>
