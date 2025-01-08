@@ -6,7 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
-  <title>OS_restored</title>
+  <link rel="manifest" href="manifest.json">
+    <script>
+    // Service worker registration code (from previous responses)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Service Worker registered:', registration);
+          })
+          .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+  <title>AshenOS</title>
   <style>
     body {
       color: #000000;
@@ -323,5 +338,7 @@
     };
     run().catch(handleError);
   </script>
+ <button id="installButton" style="display:none;">Install App</button>
+  <script src="pwa-install.js"></script> <script src="script.js"></script>
 </body>
 </html>
