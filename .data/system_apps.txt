@@ -1,0 +1,6 @@
+app.folder
+app.store
+app.calculator
+app.discord
+app.browser
+app.proxyium
