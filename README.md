@@ -46,6 +46,6 @@ Contributions are welcome! If you find a bug, have a feature request, or want to
 
 AshenOS is provided "as is" without any warranty. Use at your own risk.
 
-## Contact
+## Discord
 
-jayfeatherpros@gmail.com
+https://discord.gg/qPf237Ua4P
