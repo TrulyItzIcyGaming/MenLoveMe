@@ -1,7 +1,7 @@
 {
   "name": "AshenOS",
   "short_name": "ashen-os",
-  "description": "A brief description of your PWA",
+  "description": "AshenOS",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
