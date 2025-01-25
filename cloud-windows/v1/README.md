@@ -1,4 +1,4 @@
-# Ashen Cloud Windows - Readme
+# Ashen Cloud Windows
 
 Welcome to Ashen Cloud Windows, a free, web-based Windows environment designed for temporary tasks and experimentation. This service provides a fully functional Windows desktop accessible directly from your browser, offering a quick and convenient way to run Windows applications without needing a local installation.
 
