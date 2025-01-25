@@ -1,214 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Configuration Form</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashen Windows Configurator</title>
     <style>
-      body {
-        background: linear-gradient(
-          to bottom,
-          #330000,
-          #000000
-        ); /* Dark red to black gradient */
-        color: #ffcc00; /* Gold text */
-        font-family: sans-serif;
-        display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        min-height: 100vh;
-        margin: 0;
-      }
+        body {
+            background: linear-gradient(to bottom, #330000, #000000);
+            color: #FFCC00;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
 
-      form {
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.7
-        ); /* Semi-transparent black background */
-        border: 2px solid #ff9900; /* Orange border */
-        padding: 20px;
-        border-radius: 10px;
-        width: 350px; /* Slightly wider */
-        box-shadow: 0 0 10px rgba(255, 153, 0, 0.5); /* Glowing orange shadow */
-      }
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #FF9900;
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
+        }
 
-      label {
-        display: block;
-        margin-bottom: 5px;
-        color: #ffcc00; /* Gold labels */
-      }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #FFCC00;
+        }
 
-      input,
-      textarea,
-      select {
-        padding: 8px;
-        border: 1px solid #ff9900; /* Orange borders */
-        border-radius: 4px;
-        box-sizing: border-box;
-        width: 100%;
-        background-color: rgba(
-          255,
-          255,
-          255,
-          0.1
-        ); /* Slightly transparent white background */
-        color: #ffcc00;
-      }
-      select {
-        appearance: none;
-        background-image: url("data:image/svg+xml;utf8,<svg fill='%23FF9900' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-        background-repeat: no-repeat;
-        background-position: right 10px center;
-        padding-right: 30px;
-      }
+        input,
+        textarea,
+        select {
+            padding: 8px;
+            border: 1px solid #FF9900;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #FFCC00;
+        }
+        select{
+          appearance: none;
+          background-image: url("data:image/svg+xml;utf8,<svg fill='%23FF9900' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+          background-repeat: no-repeat;
+          background-position: right 10px center;
+          padding-right: 30px;
+        }
 
-      button {
-        background-color: #ff6600; /* Darker orange button */
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 10px auto 0; /* Center the button */
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-        width: 100%;
-      }
+        button {
+            background-color: #FF6600;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px auto 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
 
-      button:hover {
-        background-color: #cc3300; /* Even darker orange on hover */
-      }
+        button:hover {
+            background-color: #CC3300;
+        }
 
-      #price {
-        margin-top: 10px;
-        font-weight: bold;
-        text-align: center;
-      }
+        #price {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
 
-      .error {
-        color: #ff3300; /* Red error messages */
-        font-size: smaller;
-      }
+        .error {
+            color: #FF3300;
+            font-size: smaller;
+        }
     </style>
-  </head>
-  <body>
-    <form action="https://formspree.io/f/mnnjjqkw" method="POST">
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username" required />
+</head>
+<body>
 
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" required />
-      <div id="password-errors" class="error"></div>
+<form action="https://formcarry.com/s/KNtDIPF_3iM" method="POST" enctype="multipart/form-data">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required>
 
-      <label for="email">Your email:</label>
-      <input type="email" name="email" id="email" required />
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    <div id="password-errors" class="error"></div>
 
-      <label for="message">Your message:</label>
-      <textarea name="message" id="message"></textarea>
+    <label for="email">Your email:</label>
+    <input type="email" name="email" id="email" required>
 
-      <label for="storage">Storage:</label>
-      <select name="storage" id="storage">
+    <label for="message">Your message:</label>
+    <textarea name="message" id="message"></textarea>
+
+    <label for="storage">Storage:</label>
+    <select name="storage" id="storage">
         <option value="127" data-price="10">127 GB ($10)</option>
         <option value="256" data-price="20">256 GB ($20)</option>
         <option value="512" data-price="35">512 GB ($35)</option>
         <option value="1024" data-price="60">1 TB ($60)</option>
-      </select>
+    </select>
 
-      <label for="ram">RAM:</label>
-      <select name="ram" id="ram">
+    <label for="ram">RAM:</label>
+    <select name="ram" id="ram">
         <option value="2" data-price="5">2 GB ($5)</option>
         <option value="4" data-price="10">4 GB ($10)</option>
         <option value="8" data-price="18">8 GB ($18)</option>
         <option value="16" data-price="30">16 GB ($30)</option>
-      </select>
+    </select>
 
-      <label for="vcpu">vCPU:</label>
-      <select name="vcpu" id="vcpu">
+    <label for="vcpu">vCPU:</label>
+    <select name="vcpu" id="vcpu">
         <option value="1" data-price="2">1 vCPU ($2)</option>
         <option value="2" data-price="4">2 vCPU ($4)</option>
         <option value="4" data-price="8">4 vCPU ($8)</option>
         <option value="8" data-price="15">8 vCPU ($15)</option>
-      </select>
+    </select>
 
-      <div id="price">
+    <div id="price">
         <p>Monthly Price: $<span id="total-price">0</span></p>
-      </div>
+    </div>
 
-      <button type="submit">Send</button>
-    </form>
-    <script>
-      const storageSelect = document.getElementById("storage");
-      const ramSelect = document.getElementById("ram");
-      const vcpuSelect = document.getElementById("vcpu");
-      const totalPriceSpan = document.getElementById("total-price");
-      const passwordInput = document.getElementById("password");
-      const passwordErrors = document.getElementById("password-errors");
+    <button type="submit">Send</button>
+</form>
 
-      function calculatePrice() {
+<script>
+    const storageSelect = document.getElementById('storage');
+    const ramSelect = document.getElementById('ram');
+    const vcpuSelect = document.getElementById('vcpu');
+    const totalPriceSpan = document.getElementById('total-price');
+    const passwordInput = document.getElementById('password');
+    const passwordErrors = document.getElementById('password-errors');
+
+    function calculatePrice() {
         let totalPrice = 0;
 
-        totalPrice += parseInt(
-          storageSelect.options[storageSelect.selectedIndex].dataset.price
-        );
-        totalPrice += parseInt(
-          ramSelect.options[ramSelect.selectedIndex].dataset.price
-        );
-        totalPrice += parseInt(
-          vcpuSelect.options[vcpuSelect.selectedIndex].dataset.price
-        );
+        totalPrice += parseInt(storageSelect.options[storageSelect.selectedIndex].dataset.price);
+        totalPrice += parseInt(ramSelect.options[ramSelect.selectedIndex].dataset.price);
+        totalPrice += parseInt(vcpuSelect.options[vcpuSelect.selectedIndex].dataset.price);
 
         totalPriceSpan.textContent = totalPrice;
-      }
+    }
 
-      calculatePrice();
+    calculatePrice();
 
-      storageSelect.addEventListener("change", calculatePrice);
-      ramSelect.addEventListener("change", calculatePrice);
-      vcpuSelect.addEventListener("change", calculatePrice);
+    storageSelect.addEventListener('change', calculatePrice);
+    ramSelect.addEventListener('change', calculatePrice);
+    vcpuSelect.addEventListener('change', calculatePrice);
 
-      passwordInput.addEventListener("input", () => {
+    passwordInput.addEventListener('input', () => {
         const password = passwordInput.value;
         let errors = [];
 
         if (password.length < 12 || password.length > 123) {
-          errors.push("Password must be between 12 and 123 characters.");
+            errors.push("Password must be between 12 and 123 characters.");
         }
 
         if (!/[a-z]/.test(password)) {
-          errors.push(
-            "Password must contain at least one lowercase character."
-          );
+            errors.push("Password must contain at least one lowercase character.");
         }
 
         if (!/[A-Z]/.test(password)) {
-          errors.push(
-            "Password must contain at least one uppercase character."
-          );
+            errors.push("Password must contain at least one uppercase character.");
         }
 
         if (!/[0-9]/.test(password)) {
-          errors.push("Password must contain at least one number.");
+            errors.push("Password must contain at least one number.");
         }
 
         if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
-          errors.push(
-            "Password must contain at least one special character (excluding -)."
-          );
+            errors.push("Password must contain at least one special character (excluding -).");
         }
 
         if (errors.length > 0) {
-          passwordErrors.innerHTML = errors
-            .map((error) => `<p>${error}</p>`)
-            .join("");
+            passwordErrors.innerHTML = errors.map(error => `<p>${error}</p>`).join('');
         } else {
-          passwordErrors.innerHTML = "";
+            passwordErrors.innerHTML = "";
         }
-      });
-    </script>
-  </body>
+    });
+</script>
+
+</body>
 </html>
