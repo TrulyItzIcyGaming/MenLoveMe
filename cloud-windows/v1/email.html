@@ -1,198 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashen Windows Configurator</title>
-    <style>
-        body {
-            background: linear-gradient(to bottom, #330000, #000000);
-            color: #FFCC00;
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        form {
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 2px solid #FF9900;
-            padding: 20px;
-            border-radius: 10px;
-            width: 350px;
-            box-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #FFCC00;
-        }
-
-        input,
-        textarea,
-        select {
-            padding: 8px;
-            border: 1px solid #FF9900;
-            border-radius: 4px;
-            box-sizing: border-box;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #FFCC00;
-        }
-        select{
-          appearance: none;
-          background-image: url("data:image/svg+xml;utf8,<svg fill='%23FF9900' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-          background-repeat: no-repeat;
-          background-position: right 10px center;
-          padding-right: 30px;
-        }
-
-        button {
-            background-color: #FF6600;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px auto 0;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            width: 100%;
-        }
-
-        button:hover {
-            background-color: #CC3300;
-        }
-
-        #price {
-            margin-top: 10px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .error {
-            color: #FF3300;
-            font-size: smaller;
-        }
-        #disclaimer {
-            margin-top: 20px;
-            font-size: smaller;
-            text-align: center;
-            color: #FFA500;
-        }
-    </style>
-</head>
-<body>
-
-<form action="https://formcarry.com/s/KNtDIPF_3iM" method="POST" enctype="multipart/form-data">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required>
-
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required>
-    <div id="password-errors" class="error"></div>
-
-    <label for="email">Your email:</label>
-    <input type="email" name="email" id="email" required>
-
-    <label for="message">Your message:</label>
-    <textarea name="message" id="message"></textarea>
-
-    <label for="storage">Storage:</label>
-    <select name="storage" id="storage">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azure VM Configurator</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+  </head>
+  <body>
+    <form action=""https://submit-form.com/rKdtlQI4U"" method="POST">
+      <div id="templates">
+        <button
+          type="button"
+          class="template-button"
+          data-ram="2"
+          data-vcpu="1"
+          data-storage="127"
+        >
+          Basic
+        </button>
+        <button
+          type="button"
+          class="template-button"
+          data-ram="4"
+          data-vcpu="2"
+          data-storage="256"
+        >
+          Moderate
+        </button>
+        <button
+          type="button"
+          class="template-button"
+          data-ram="16"
+          data-vcpu="8"
+          data-storage="512"
+        >
+          Pro
+        </button>
+        <button
+          type="button"
+          class="template-button"
+          data-ram="14"
+          data-vcpu="4"
+          data-storage="512"
+          data-gpu="true"
+        >
+          Gaming
+        </button>
+      </div>
+      <label for="username">Username:</label
+      ><input type="text" name="username" id="username" required />
+      <label for="password">Password:</label
+      ><input type="password" name="password" id="password" required />
+      <div id="password-errors" class="error"></div>
+      <label for="email">Your email:</label
+      ><input type="email" name="email" id="email" required />
+      <label for="message">Your message:</label
+      ><textarea name="message" id="message"></textarea>
+      <label for="storage">Storage:</label
+      ><select name="storage" id="storage">
         <option value="127" data-price="10">127 GB ($10)</option>
         <option value="256" data-price="20">256 GB ($20)</option>
         <option value="512" data-price="35">512 GB ($35)</option>
         <option value="1024" data-price="60">1 TB ($60)</option>
-    </select>
+      </select>
+      <label for="ram">RAM (GB):</label
+      ><input type="number" name="ram" id="ram" min="0" />
+      <label for="vcpu">vCPU:</label
+      ><input type="number" name="vcpu" id="vcpu" min="0" />
+      <div id="matching-vms">
+        <h3>Matching VM Sizes:</h3>
+        <ul id="vm-list"></ul>
+      </div>
+      <div id="price">
+        <p>Monthly Price: $<span id="total-price">0</span></p>
+      </div>
+      <input type="hidden" name="selected_vm" id="selected_vm" />
+      <button type="submit">Send</button>
+    </form>
 
-    <label for="ram">RAM:</label>
-    <select name="ram" id="ram">
-        <option value="2" data-price="5">2 GB ($5)</option>
-        <option value="4" data-price="10">4 GB ($10)</option>
-        <option value="8" data-price="18">8 GB ($18)</option>
-        <option value="16" data-price="30">16 GB ($30)</option>
-    </select>
+    <script>
+      const storageSelect = document.getElementById("storage");
+      const ramInput = document.getElementById("ram");
+      const vcpuInput = document.getElementById("vcpu");
+      const totalPriceSpan = document.getElementById("total-price");
+      const passwordInput = document.getElementById("password");
+      const passwordErrors = document.getElementById("password-errors");
+      const vmList = document.getElementById("vm-list");
+      const selectedVMInput = document.getElementById("selected_vm");
+      const templateButtons = document.querySelectorAll(".template-button");
+      const gamingButton = templateButtons[3];
 
-    <label for="vcpu">vCPU:</label>
-    <select name="vcpu" id="vcpu">
-        <option value="1" data-price="2">1 vCPU ($2)</option>
-        <option value="2" data-price="4">2 vCPU ($4)</option>
-        <option value="4" data-price="8">4 vCPU ($8)</option>
-        <option value="8" data-price="15">8 vCPU ($15)</option>
-    </select>
+      let vmSizes = [];
 
-    <div id="price">
-        <p>Estimated Monthly Price: $<span id="total-price">0</span></p>
-    </div>
-    <div id="disclaimer">
-        <p>Please note: The prices displayed here are estimates and are subject to change. Actual pricing may vary based on current market conditions and final configuration details. A detailed quote will be provided upon request.</p>
-    </div>
+      // Initial fetch (for non-gaming templates)
+      fetch("values.json")
+        .then((response) => response.json())
+        .then((data) => {
+          vmSizes = data;
+          findMatchingVMs();
+        })
+        .catch((error) => console.error("Error fetching values.json:", error));
 
-    <button type="submit">Send</button>
-</form>
+      const findMatchingVMs = () => {
+        const requestedRAM = parseInt(ramInput.value) || 0;
+        const requestedvCPU = parseInt(vcpuInput.value) || 0;
+        vmList.innerHTML = "";
 
-<script>
-    const storageSelect = document.getElementById('storage');
-    const ramSelect = document.getElementById('ram');
-    const vcpuSelect = document.getElementById('vcpu');
-    const totalPriceSpan = document.getElementById('total-price');
-    const passwordInput = document.getElementById('password');
-    const passwordErrors = document.getElementById('password-errors');
+        const isGamingTemplate = gamingButton.classList.contains("active");
 
-    function calculatePrice() {
-        let totalPrice = 0;
+        let matchingVMs = vmSizes.filter(
+          (vm) =>
+            vm.ram === requestedRAM &&
+            vm.vcpu === requestedvCPU &&
+            (!isGamingTemplate || vm.gpu === true)
+        );
 
-        totalPrice += parseInt(storageSelect.options[storageSelect.selectedIndex].dataset.price);
-        totalPrice += parseInt(ramSelect.options[ramSelect.selectedIndex].dataset.price);
-        totalPrice += parseInt(vcpuSelect.options[vcpuSelect.selectedIndex].dataset.price);
+        if (matchingVMs.length === 0) {
+          vmList.innerHTML = "<li>No matching VMs found.</li>";
+          calculatePrice();
+        } else {
+          matchingVMs.forEach((vm) => {
+            const listItem = document.createElement("li");
+            let hourlyPrice = vm.price;
+            if (hourlyPrice > 100) {
+              hourlyPrice = hourlyPrice / 17615.34;
+            }
+            const monthlyPrice = (hourlyPrice * 24 * 30).toFixed(2);
+            listItem.textContent = `${vm.size} - $${monthlyPrice}/month (${
+              vm.vcpu
+            } vCPU, ${vm.ram} GB RAM) ${vm.gpu ? "(GPU)" : ""}`;
 
-        totalPriceSpan.textContent = totalPrice;
-    }
+            listItem.addEventListener("click", () => {
+              document
+                .querySelectorAll("#vm-list li.selected")
+                .forEach((el) => el.classList.remove("selected"));
+              listItem.classList.add("selected");
+              selectedVMInput.value = vm.size;
+              calculateTotalPrice(monthlyPrice);
+            });
+            vmList.appendChild(listItem);
+          });
+        }
+      };
 
-    calculatePrice();
+      const calculatePrice = () => {
+        const storagePrice = parseInt(
+          storageSelect.options[storageSelect.selectedIndex].dataset.price
+        );
+        totalPriceSpan.textContent = storagePrice;
+      };
 
-    storageSelect.addEventListener('change', calculatePrice);
-    ramSelect.addEventListener('change', calculatePrice);
-    vcpuSelect.addEventListener('change', calculatePrice);
+      const calculateTotalPrice = (vmPrice) => {
+        const storagePrice = parseInt(
+          storageSelect.options[storageSelect.selectedIndex].dataset.price
+        );
+        totalPriceSpan.textContent = (
+          parseFloat(vmPrice) + storagePrice
+        ).toFixed(2);
+      };
 
-    passwordInput.addEventListener('input', () => {
+      ramInput.addEventListener("input", findMatchingVMs);
+      vcpuInput.addEventListener("input", findMatchingVMs);
+      storageSelect.addEventListener("change", calculatePrice);
+      calculatePrice();
+
+      passwordInput.addEventListener("input", () => {
         const password = passwordInput.value;
         let errors = [];
+        if (password.length < 12 || password.length > 123)
+          errors.push("Password must be between 12 and 123 characters.");
+        if (!/[a-z]/.test(password))
+          errors.push(
+            "Password must contain at least one lowercase character."
+          );
+        if (!/[A-Z]/.test(password))
+          errors.push(
+            "Password must contain at least one uppercase character."
+          );
+        if (!/[0-9]/.test(password))
+          errors.push("Password must contain at least one number.");
+        if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password))
+          errors.push(
+            "Password must contain at least one special character (excluding -)."
+          );
+        passwordErrors.innerHTML = errors.length
+          ? errors.map((err) => `<p>${err}</p>`).join("")
+          : "";
+      });
 
-        if (password.length < 12 || password.length > 123) {
-            errors.push("Password must be between 12 and 123 characters.");
-        }
+      templateButtons.forEach((template) => {
+        template.addEventListener("click", () => {
+          templateButtons.forEach((btn) => btn.classList.remove("active"));
+          template.classList.add("active");
+          ramInput.value = template.dataset.ram;
+          vcpuInput.value = template.dataset.vcpu;
+          storageSelect.value = template.dataset.storage;
+          calculatePrice();
 
-        if (!/[a-z]/.test(password)) {
-            errors.push("Password must contain at least one lowercase character.");
-        }
-
-        if (!/[A-Z]/.test(password)) {
-            errors.push("Password must contain at least one uppercase character.");
-        }
-
-        if (!/[0-9]/.test(password)) {
-            errors.push("Password must contain at least one number.");
-        }
-
-        if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
-            errors.push("Password must contain at least one special character (excluding -).");
-        }
-
-        if (errors.length > 0) {
-            passwordErrors.innerHTML = errors.map(error => `<p>${error}</p>`).join('');
-        } else {
-            passwordErrors.innerHTML = "";
-        }
-    });
-</script>
-
-</body>
+          if (template === gamingButton) {
+            vmSizes = [
+              // Embedded JSON for gaming
+              {
+                size: "NV4as_v4",
+                price: 4469.9652,
+                vcpu: 4,
+                ram: 14,
+                gpu: true,
+              },
+              { size: "NV6", price: 4469.9652, vcpu: 6, ram: 20, gpu: true },
+            ];
+          } else {
+            // Restore fetching for other templates
+            fetch("values.json")
+              .then((response) => response.json())
+              .then((data) => {
+                vmSizes = data;
+                findMatchingVMs(); // Call findMatchingVMs after fetching
+              });
+          }
+          setTimeout(findMatchingVMs, 0);
+        });
+      });
+    </script>
+  </body>
 </html>
