@@ -1,0 +1,111 @@
+body {
+  background: linear-gradient(to bottom, #330000, #000000);
+  color: #ffcc00;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+form {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ff9900;
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffcc00;
+}
+
+input,
+textarea,
+select {
+  padding: 8px;
+  border: 1px solid #ff9900;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffcc00;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23FF9900' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+button {
+  background-color: #ff6600;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px auto 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #cc3300;
+}
+
+#price {
+  margin-top: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#vm-list {
+  list-style-type: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+#vm-list li.selected {
+  background-color: #ff9900;
+  color: #000;
+}
+
+.error {
+  color: #ff3300;
+  font-size: smaller;
+}
+
+#templates {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.template-button {
+  background-color: #ff9900;
+  border: none;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.template-button.active {
+  background-color: #cc6600; /* Darker orange for active button */
+}
+
+.template-button:hover {
+  background-color: #cc6600;
+}
